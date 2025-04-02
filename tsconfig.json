@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "es6",
+    "module": "Node16",
+    "moduleResolution": "node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["es2016", "dom"],
+    "baseUrl": "./resources/js",
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@/*": ["./*"],
+      "*": ["node_modules/*"]
+    },
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"], // Inclua os arquivos de origem
+  "exclude": ["node_modules", "public"] // Exclua diretórios desnecessários
+}
