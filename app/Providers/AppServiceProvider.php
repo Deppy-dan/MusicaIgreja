@@ -7,13 +7,24 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register()
+    /**
+     * Register any application services.
+     */
+    public function register(): void
     {
         //
     }
 
-    public function boot()
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
-        //
+        Vite::useHotFile(base_path('vendor/laravel/vite/hot'))
+            ->withEntryPoints([
+                'resources/js/App.jsx'
+            ]);
+
+        Vite::prefetch(concurrency: 3);
     }
 }

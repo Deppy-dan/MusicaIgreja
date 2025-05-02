@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Routes for API Authentication
-Route::post('/login', 'App\Http\Controllers\Auth\AuthenticatedSessionController@store');
+Route::post('/login', [AuthenticatedSessionController::class, 'login']);
+
 Route::post('/logout', 'App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
+
+Route::get('/teste', function () {
+    return response()->json(['status' => 'API carregada corretamente!']);
+});
+
+
 
 // Route to serve the React application on any other URL
 Route::get('/{path?}', function () {

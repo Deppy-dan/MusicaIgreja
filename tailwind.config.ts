@@ -2,6 +2,9 @@
 import type { Config } from 'tailwindcss/types/config';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import tailwindcssAnimate from "tailwindcss-animate";
+import tailwindcssForms from "@tailwindcss/forms";
+
 
 export default {
     content: [
@@ -143,7 +146,7 @@ export default {
         },
     },
     plugins: [
-        require("tailwindcss-animate"),
-        require('@tailwindcss/forms'),
+        tailwindcssAnimate,
+        tailwindcssForms,
     ],
 } satisfies Config;

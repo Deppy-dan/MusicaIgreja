@@ -7,14 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * Define as rotas do aplicativo.
-     */
     public function boot()
     {
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
+            Route::prefix('api') // Garante que todas as rotas tenham "api/" no início
+                ->middleware('api')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')

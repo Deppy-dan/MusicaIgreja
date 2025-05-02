@@ -1,9 +1,17 @@
 {
+  "files": [],
+  "references": [ 
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "composite": true,
     "jsx": "react-jsx",
     "target": "es6",
-    "module": "Node16",
-    "moduleResolution": "node16",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
     "lib": ["es2016", "dom"],
@@ -11,10 +19,10 @@
     "typeRoots": ["./node_modules/@types"],
     "paths": {
       "@/*": ["./*"],
-      "*": ["node_modules/*"]
+      "*": ["*.ts", "*.tsx", "*.jsx", "*.js"]
     },
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"], // Inclua os arquivos de origem
+  "include": ["resources/js"], // Inclua os arquivos de origem
   "exclude": ["node_modules", "public"] // Exclua diretórios desnecessários
 }
